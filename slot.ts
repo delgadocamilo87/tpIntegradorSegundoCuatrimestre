@@ -4,14 +4,14 @@ export class Slot{
     private slotValue:number[] = [0,35,25,15,10,50];
     private numActual: number[] = [];
     private cantidadDeSlots = [0,0,0];
-
+    
     public constructor(){
 
     }
 
     public inicio(){
-        const prompt = require("prompt-sync")();
-        let saludo:any = prompt("Presione el boton Enter");
+        let prompt = require("prompt-sync")();
+        let saludo: any = prompt("Presione el boton Enter");
         saludo = this.lanzarInicio;        
     }
 
@@ -31,7 +31,7 @@ export class Slot{
       }
 
     public mostrarAnimal(num, im){
-        this.cantidadDeSlots[num],this.imgSlot[0],this.imgSlot[im]
+        this.cantidadDeSlots[num],this.imgSlot[0],this.imgSlot[im];
     }
 
 
@@ -39,6 +39,6 @@ export class Slot{
 
     let slots = new Slot();
 
-    console.log(slots.lanzarInicio());
+    console.log(slots.inicio());
     
 
