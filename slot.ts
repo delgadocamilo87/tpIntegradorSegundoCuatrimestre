@@ -46,7 +46,7 @@ export class Slot{
             }
            console.log(animal.length,slot.length);
             return animal.length;
-            return slot.length
+    
         }
         
         }
