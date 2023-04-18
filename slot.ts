@@ -1,7 +1,7 @@
 export class Slot{
 
     private imgSlot: string[] = ["leon", "cabra", "marmota", "serpiente", "elefante", "dinosaurio"];
-    private slotValue:number[] = [0,35,25,15,10,50];
+    private slotValue:number[] = [25,35,2,15,10,50];
     private numActual: number[] = [];
     private cantidadDeSlots = [0,0,0];
     
@@ -30,15 +30,15 @@ export class Slot{
         return random;
       }
 
-    public mostrarAnimal(num, im){
-        this.cantidadDeSlots[num],this.imgSlot[0],this.imgSlot[im];
-    }
+    public mostrarAnimal(num: number, im: number){
+        this.cantidadDeSlots[num], this.imgSlot[im]
 
 
     }
+}
 
     let slots = new Slot();
 
-    console.log(slots.inicio());
+    console.log(slots.lanzarInicio());
     
 

@@ -4,7 +4,7 @@ exports.Slot = void 0;
 var Slot = /** @class */ (function () {
     function Slot() {
         this.imgSlot = ["leon", "cabra", "marmota", "serpiente", "elefante", "dinosaurio"];
-        this.slotValue = [0, 35, 25, 15, 10, 50];
+        this.slotValue = [25, 35, 2, 15, 10, 50];
         this.numActual = [];
         this.cantidadDeSlots = [0, 0, 0];
     }
@@ -15,7 +15,7 @@ var Slot = /** @class */ (function () {
     };
     Slot.prototype.lanzarInicio = function () {
         this.numActual = [];
-        for (var n = 0; n < this.cantidadDeSlots.length; n++) {
+        for (var n = 0; n < this.imgSlot.length; n++) {
             this.numActual.push(this.escogerValor());
             this.mostrarAnimal(n, this.numActual[n]);
         }
@@ -27,10 +27,10 @@ var Slot = /** @class */ (function () {
         return random;
     };
     Slot.prototype.mostrarAnimal = function (num, im) {
-        this.cantidadDeSlots[num], this.imgSlot[0], this.imgSlot[im];
+        this.cantidadDeSlots[num, im], this.imgSlot[im];
     };
     return Slot;
 }());
 exports.Slot = Slot;
 var slots = new Slot();
-console.log(slots.inicio());
+console.log(slots.lanzarInicio());
