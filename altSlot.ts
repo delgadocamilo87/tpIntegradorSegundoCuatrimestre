@@ -1,6 +1,7 @@
 // Creo los slots
 let slots = ["❤️", "🤍", "🖤"];
 let slotAzar = ["❤️", "🤍", "🖤"];
+const readlineSync = require('readline-sync');
 
 // funcion para retornar slots del jugador al azar
 function randomSlotsJugador() {
