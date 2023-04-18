@@ -1,3 +1,5 @@
+import { equal } from "assert";
+
 export class Slot{
 
     private imgSlot: string[] = ["leon", "cabra", "marmota", "serpiente", "elefante", "dinosaurio"];
@@ -9,10 +11,14 @@ export class Slot{
 
     }
 
-    public inicio(){
+    public inicio():any{
         let prompt = require("prompt-sync")();
-        let saludo: any = prompt("Presione el boton Enter");
-        saludo = this.lanzarInicio;        
+        let saludo: any = prompt("Presione el boton 1");
+        if(saludo == 1){
+        saludo = this.lanzarInicio(); 
+        } else {
+            console.log("Por favor ingrese el número 1:");            
+        }       
     }
 
     public lanzarInicio(){
@@ -21,21 +27,31 @@ export class Slot{
             this.numActual.push(this.escogerValor());
             this.mostrarAnimal(n,this.numActual[n])
         }  
-        return this.numActual;
-        console.log(this.numActual);        
+        return this.numActual;       
     }
 
     public escogerValor(){
-        let random = Math.floor(Math.random()*this.slotValue.length);
+        let random = Math.floor(Math.random()*this.imgSlot.length);
         return random;
       }
 
     public mostrarAnimal(num: number, im: number){
-        this.cantidadDeSlots[num], this.imgSlot[im]
+        let aux: string;
+        let animal = this.imgSlot;
+        let slot = this.slotValue;
 
-
+        for(num = 0; num<this.slotValue.length; num++){
+            for(im = num; im<this.slotValue.length; im++){
+                slot[num] = parseInt(animal[im])
+            }
+           console.log(animal.length,slot.length);
+            return animal.length;
+            return slot.length
+        }
+        
+        }
     }
-}
+
 
     let slots = new Slot();
 

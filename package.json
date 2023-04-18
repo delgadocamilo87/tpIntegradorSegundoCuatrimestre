@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@types/prompt-sync": "^4.2.0",
+    "@types/readline-sync": "^1.4.4",
     "prompt-sync": "^4.2.0"
   },
   "name": "tp-integrador-2do-cuatri",
