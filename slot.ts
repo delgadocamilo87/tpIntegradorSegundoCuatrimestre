@@ -36,20 +36,9 @@ export class Slot{
       }
 
     public mostrarAnimal(num: number, im: number){
-        let aux: string;
-        let animal = this.imgSlot;
-        let slot = this.slotValue;
-
-        for(num = 0; num<this.slotValue.length; num++){
-            for(im = num; im<this.slotValue.length; im++){
-                slot[num] = parseInt(animal[im])
-            }
-           console.log(animal.length,slot.length);
-            return animal.length;
-    
-        }
         
-        }
+        
+    }
     }
 
 
