@@ -22,7 +22,6 @@ var Casino = /** @class */ (function () {
         else {
             console.log("Usted no puede ingresar al establecimiento");
         }
-        return edadLimite;
     };
     Casino.prototype.seleccionDeJuego = function () {
     };
