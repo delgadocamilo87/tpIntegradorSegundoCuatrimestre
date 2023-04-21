@@ -1,9 +1,8 @@
 import { Tragamonedas } from "./tragamonedas";
-export class tragaMonedasChica extends Tragamonedas {
+export class tragaMonedasChica  {
     private cantidadSlots: number;
-    constructor(pSaldo: number, pSlots: any, pPremioMax: number, pTipos: string, cantidadDeSlots: number) {
-        super(pSaldo, pSlots, pPremioMax, pTipos);
-        this.cantidadSlots = cantidadDeSlots;
+    constructor(pSaldo: number, pPremioMax: number, pTipos: string) {
+       
     }
     public validacionDeSlots(): boolean {
         // Lógica de validación de slots
