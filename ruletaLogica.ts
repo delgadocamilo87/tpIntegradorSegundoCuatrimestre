@@ -1,73 +1,56 @@
 
 
 //tirar un número de 1 a 15.
-
+import * as readline from "readline-sync";
 import { Casino } from "./casino";
 import { interfazRuleta } from "./interfazRuleta";
 
+
 //Imprimir todos los números de 1 a 15 pero en el lugar del número Random imprimir el "Numero Ganador."
 export class Ruleta extends Casino implements interfazRuleta{
-    public apuesta:number;
-    public premio:number;
-    private color:string;
-    private numero:number;
+    public apuestaJugador:number;
+    public premioJugador:number;
     private inicioRuleta:number = 0;
     private finalRuleta:number = 15;
     private numeroGanador:number;
-    private numeroJugador:number = 0;
+    private numeroJugador:number;
     private colorJugador:string;
-    private colorGanador[]:string=[];//tengo problemas para implementar los arrays
-    private colors[]:string=["Rojo","Verde"];//tengo problemas para implementar los arrays
+    private colorGanador:string[]=[];
+    private colors:string[]=["Rojo","Verde"];
     
-
-
-
-​
-public constructor(pNombre: string,
-    pEdad: number, pTipos: string,pColor:string,pNumero:number,pApuesta:number,pPremio:number){
-    super(pNombre,pEdad,pTipos)
-    this.color=pColor;
-    this.numero=pNumero;
-    this.apuesta=pApuesta;
-    this.premio=pPremio;
+public constructor(){
+    super();
 }
 
-public getapuesta():number{
-    return this.apuesta;
+public setNumeroJugador(){
+    let numero=this.numeroJugador;
+    numero=readline.questionInt("Ingresa el numero al que quieras apostar de 0 a 15: ");
+    if(numero<0 || numero>15){
+       console.log("Ingresa un numero valido entre 0 y 15 : ")
+    }else {
+    console.log(`El numero del jugador es: ${numero}`)
+    }
 }
-public setapuesta(p_apuesta){
-    this.apuesta=p_apuesta;
+public setApuestaJugador(){
+    this.apuestaJugador=readline.questionInt("Ingresa el monto al que quieras apostar de ");
+    return `La apuesta del jugador es${this.apuestaJugador}`;
 }
-
-public getpremio():number{
-    return this.premio;
-}
-public setpremio(p_premio){
-    this.premio=p_premio;
-}
-
-public getcolor():string{
-    return this.color;
-}
-public setcolor(p_color){
-    this.color=p_color;
+public setColorJugador(){
+    this.colorJugador=readline.question("Ingrese que a que color desea apostar verde o rojo");
+    return `El color del jugador es ${this.colorJugador}`
 }
 
-public getnumero():number{
-    return this.numero;
-}
-public setnumero(p_numero){
-    this.numero=p_numero;
-}
-
-public saberColorGanador():string{
-    this.colorGanador=Math.round(Math.random() * this.colors.length);
-    return this.colorGanador;
+public saberColorGanador(){
+    let colorGanador=Math.round(Math.random() * this.colors.length);
+    this.colorGanador.push(this.colors.toString());
+    return colorGanador.toString();
 }
 
 public tirarColor() {
-    const random = Math.random() * this.colors.length;
+    const random =  Math.round(Math.random()* this.colors.length);
+    return random.toString();
 }
+
 
 public tirarRuleta(){
     this.numeroGanador=Math.round(Math.random() * (this.finalRuleta - this.inicioRuleta + 1) + this.inicioRuleta);
@@ -81,7 +64,7 @@ public tirarRuleta(){
 }
 
 
-public compararResultados():string{
+/*public compararResultados():string{
     if (this.numeroGanador == this.numeroJugador && this.colorGanador == this.colorJugador) {
         return "Wow usted ha Ganadoooo!";
       } else if (this.numeroGanador == this.numeroJugador) {
@@ -91,14 +74,10 @@ public compararResultados():string{
       } else {
         return"Usted no acepto el color ni numero ganador, Vuelva a intentarlo...";
       }
-}
+}*/
 
 
 //Aqui iria la interaccion con el usuario que nose como aplicarla//
-
-
-
-
 
 
 
@@ -106,4 +85,14 @@ public entregaDePremio(): number {
     return 0
 }
 
+
+
 }
+let ruleta1=new Ruleta();
+console.log(ruleta1.setNumeroJugador());
+console.log(ruleta1.tirarColor());
+console.log(ruleta1.saberColorGanador());
+console.log(ruleta1.tirarRuleta());
+
+
+

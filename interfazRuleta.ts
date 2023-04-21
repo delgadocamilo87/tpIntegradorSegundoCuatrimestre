@@ -1,5 +1,5 @@
 export interface interfazRuleta {
-    apuesta:number;
-    premio:number;
+    apuestaJugador:number;
+    premioJugador:number;
     entregaDePremio():number
 }
