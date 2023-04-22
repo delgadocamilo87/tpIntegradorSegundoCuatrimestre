@@ -1,33 +1,20 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Casino = void 0;
-var readline = require("readline-sync");
 var Casino = /** @class */ (function () {
-    function Casino() {
-        this.nombre;
-        this.edad;
-        this.tiposDeJuego;
+    function Casino(pCasino) {
+        this.casino = pCasino;
     }
-    Casino.prototype.preguntas = function () {
-        var preguntaNombre = readline.question("Dime tu nombre: ".toUpperCase());
-        this.edad = readline.questionInt("Ahora, dime tu edad: ");
-        var Tipos = readline.questionInt("ingrese el numero de juego que desea jugar: ");
-        return "Hola ".concat(preguntaNombre, ", bienvenido al Casino tal, tu edad es ").concat(this.edad, ",");
+    Casino.prototype.getCasino = function () {
+        return this.casino;
     };
-    Casino.prototype.validacionDeEdad = function () {
-        var edadLimite = this.edad;
-        if (edadLimite >= 18) {
-            console.log("Bienvenido al Casino del indio programador!");
-        }
-        else {
-            console.log("Usted no puede ingresar al establecimiento");
-        }
+    Casino.prototype.setCasino = function (pCasino) {
+        this.casino = pCasino;
     };
-    Casino.prototype.seleccionDeJuego = function () {
+    Casino.prototype.welcome = function (pTitulo) {
+        console.log("Bienvenido a ".concat(pTitulo, "\n"));
+        console.log("Mucha suerte!");
     };
     return Casino;
 }());
 exports.Casino = Casino;
-var casino1 = new Casino();
-console.log(casino1.preguntas());
-console.log(casino1.validacionDeEdad());
