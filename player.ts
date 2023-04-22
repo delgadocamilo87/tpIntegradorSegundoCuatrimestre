@@ -3,7 +3,7 @@ import *as readlineSync from 'readline-sync'
 import { Casino } from './casino';
 import { Menu } from './menu';
 
-export class player{
+export class Player{
     private nombre: string;
     private dinero:number;
     private edad: number
@@ -61,23 +61,34 @@ export class player{
         }
     }
 
-    public playGame(pPlay:Casino){
+    public playGame(pPlay:Casino):void {
         let valor:number;
         do{
-            valor = pPlay.menu();
+            valor = pPlay.menuCasino();
             if(valor>0 && valor<5){
                 let menu = new Menu();
-                menu.fabrica(valor,this,pPlay)
+                menu.factory(pPlay,valor,this);
             }
             else{
                 if(valor<0 || valor>=5){
                     console.log('Debe ingresar un número que este en el menú');
-                    pPlay.pausaConsola()
+                    pPlay.pausa()
                     
                 }
             }
         } while(valor!=0);
     }
+
+    public validacionDeEdad(){
+        let edadLimite:number = this.edad;        
+            if(edadLimite >= 18){
+              console.log("Bienvenido al Casino del indio programador!");
+            }
+            else{
+              console.log("Usted no puede ingresar al establecimiento");
+            }  
+            return edadLimite;
+    };
 
 
 
