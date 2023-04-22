@@ -89,9 +89,4 @@ export class Player{
             }  
             return edadLimite;
     };
-
-
-
-    
-
 }

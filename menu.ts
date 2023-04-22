@@ -10,7 +10,6 @@ export class Menu {
     private game;
 
     public constructor(){
-
     }
 
     public factory(casino: Casino, i:number, player:Player){
@@ -28,7 +27,7 @@ export class Menu {
                 this.game.game(casino);
              break;
              case 4:
-                this.game = new Cartas();                 
+                this.game = new Ruleta();                 
                 this.game.game(casino);
              break;
              case 0: 

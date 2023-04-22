@@ -1,51 +1,55 @@
 "use strict";
-<<<<<<< HEAD
 exports.__esModule = true;
 exports.tragaMonedasChica = void 0;
 var tragaMonedasChica = /** @class */ (function () {
-    function tragaMonedasChica(pSaldo, pPremioMax, pTipos) {
-=======
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
-exports.tragaMonedasChica = void 0;
-var tragamonedas_1 = require("./tragamonedas");
-var tragaMonedasChica = /** @class */ (function (_super) {
-    __extends(tragaMonedasChica, _super);
-    function tragaMonedasChica(pSaldo, pSlots, pPremioMax, pTipos, cantidadDeSlots) {
-        var _this = _super.call(this, pSaldo, pSlots, pPremioMax, pTipos) || this;
-        _this.cantidadSlots = cantidadDeSlots;
-        return _this;
->>>>>>> 4064e300453319d934d2a1c077191bdc686145b2
+    function tragaMonedasChica() {
+        this.slots = ["🖤", "🤍", "🧡", "💙"];
     }
-    tragaMonedasChica.prototype.validacionDeSlots = function () {
-        // Lógica de validación de slots
-        return true;
+    // inicio el random de los slots que saldran al azar
+    tragaMonedasChica.prototype.randomSlots = function () {
+        this.slotsAleatorio = [];
+        // sorteo 3 slots al azar del array completod de slots
+        for (var i = 0; i < 3; i++) {
+            var indiceAleatorio = Math.floor(Math.random() * this.slots.length);
+            this.slotsAleatorio.push(this.slots[indiceAleatorio]);
+        }
+        return "SLOTS DE MAQUINA --------->" + this.slotsAleatorio;
     };
-    tragaMonedasChica.prototype.aciertos = function () {
-        return 0;
+    // inicio el random de los slots del Jugador
+    tragaMonedasChica.prototype.randomSlotsJugador = function () {
+        this.slotsjugadorAleatorio = [];
+        // sorteo 3 slots al azar para asignar al jugador
+        for (var i = 0; i < 3; i++) {
+            var jugadorAleatorio = Math.floor(Math.random() * this.slots.length);
+            this.slotsjugadorAleatorio.push(this.slots[jugadorAleatorio]);
+        }
+        return "SUS SLOTS --------->" + this.slotsjugadorAleatorio;
     };
-    tragaMonedasChica.prototype.seleccionDePremio = function () {
-        // Lógica de selección de premio
-        return "Premio";
+    //comparo si los slots arrojados al azar coinciden con los slots del jugador
+    tragaMonedasChica.prototype.compararResultados = function () {
+        var indicesCoinciden = true;
+        for (var i = 0; i < this.slotsAleatorio.length; i++) {
+            if (this.slotsAleatorio[i] !== this.slotsjugadorAleatorio[i]) {
+                indicesCoinciden = false;
+                break;
+            }
+        }
+        if (indicesCoinciden) {
+            console.log("Felicidades, Usted Gano el premio Mayor!!");
+        }
+        else if (this.slotsAleatorio[0] === this.slotsjugadorAleatorio[0] ||
+            this.slotsAleatorio[1] === this.slotsjugadorAleatorio[1] ||
+            this.slotsAleatorio[2] === this.slotsjugadorAleatorio[2]) {
+            console.log("usted gano x creditos");
+        }
+        else {
+            console.log("usted no gano, siga participando");
+        }
     };
     return tragaMonedasChica;
-<<<<<<< HEAD
 }());
-=======
-}(tragamonedas_1.Tragamonedas));
->>>>>>> 4064e300453319d934d2a1c077191bdc686145b2
 exports.tragaMonedasChica = tragaMonedasChica;
+var tragamonedas1 = new tragaMonedasChica();
+console.log(tragamonedas1.randomSlots());
+console.log(tragamonedas1.randomSlotsJugador());
+console.log(tragamonedas1.compararResultados());

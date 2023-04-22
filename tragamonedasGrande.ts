@@ -1,10 +1,8 @@
 import {Tragamonedas} from './tragamonedas'
-export class TragamonedasGrande extends Tragamonedas {
+export class TragamonedasGrande{
     private cantidadDeSlots: number;
-    constructor(pSaldo: number, pSlots: any, pPremioMax: number, pTipos: string, cantidadDeSlots: number) {
-        super(pSaldo, pSlots, pPremioMax, pTipos);
-        this.cantidadDeSlots = cantidadDeSlots;
-    }
+    constructor() {
+     }
     public premioMayorTotal(): number {
         // cálculo del premio mayor total
         return 0;

@@ -2,18 +2,10 @@ import *as readline from 'readline-sync';
 import { Player } from './player';
 import { Menu } from './menu';
 
-export class Casino{  
-  private casino: string[];  
-  
-  public constructor(pCasino:string[]){
-   this.casino = pCasino;
-  }
+export class Casino {
+  protected casino: string[];
 
-  public getCasino():string[]{
-    return this.casino;
-  }
-
-  public setCasino(pCasino:string[]){
+  public constructor(pCasino: string[]) {
     this.casino = pCasino;
   }
 
@@ -27,6 +19,7 @@ export class Casino{
     let pEdad = readline.questionInt("Ahora, dime tu edad: ");
     let pCredito = readline.questionInt('Cuantos créditos deseas comprar?')
     let player = new Player(pNombre, pEdad, pCredito);
+    player.validacionDeEdad();
     }
 
   public mostrarInicio(pTitulo: string){
@@ -58,7 +51,7 @@ export class Casino{
 
   public pausa(){
       let pausa;
-       pausa = readline.keyIn("Presione cualquier tecla para continuar...")
+       pausa = readline.keyIn("Presione cualquier letra para continuar...")
   }
 
   public clear(){
@@ -72,4 +65,5 @@ console.log(casino1.preguntas());
 console.log(casino1.pausa());
 console.log(casino1.clear());
 console.log(casino1.menuCasino());
+console.log(casino1.mostrarInicio("de esta maquina"));
 console.log(casino1.pausa());

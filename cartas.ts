@@ -6,15 +6,9 @@ export class Cartas extends Casino  {
     private premio:number;
     private apuesta :number;
 
+    constructor(){
+        super([])}
 
-    constructor(pNombre,pEdad,pTipos,p_baraja:[],p_puntosJugadores:number,p_premio:number,p_apuesta:number){
-        super(pNombre,pEdad,pTipos)
-        this.baraja=p_baraja;
-        this.puntosJugadores=p_puntosJugadores;
-        this.premio=p_premio;
-        this.apuesta=p_apuesta;
-
-    }
     public getbaraja():[]{
         return this.baraja;
     }
