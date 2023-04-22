@@ -2,7 +2,6 @@
 import * as readline from "readline-sync";
 import { Casino } from "./casino";
 import { interfazRuleta } from "./interfazRuleta";
-import { log } from "console";
 
 //Imprimir todos los números de 1 a 15 pero en el lugar del número Random imprimir el "Numero Ganador."
 export class Ruleta implements interfazRuleta {
@@ -115,7 +114,6 @@ export class Ruleta implements interfazRuleta {
 let ruleta1 = new Ruleta();
 
 console.log(ruleta1.setNumeroJugador());
-
 console.log(ruleta1.setColorJugador());
 console.log(ruleta1.tirarRuleta());
 console.log(ruleta1.saberColorGanador());

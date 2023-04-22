@@ -1,6 +1,6 @@
 import *as readline from 'readline-sync';
 import *as readlineSync from 'readline-sync'
-import { Casino } from './casino';
+import { Casino } from './casino1';
 import { Menu } from './menu';
 
 export class Player{
@@ -79,14 +79,17 @@ export class Player{
         } while(valor!=0);
     }
 
-    public validacionDeEdad(){
-        let edadLimite:number = this.edad;        
-            if(edadLimite >= 18){
-              console.log("Bienvenido al Casino del indio programador!");
+    public validacionDeEdad(pEdad):boolean{
+        this.edad = pEdad; 
+        pEdad = false       
+            if(pEdad >= 18){
+                pEdad = true;
+                console.log("Bienvenido al Casino del indio programador!");
             }
             else{
               console.log("Usted no puede ingresar al establecimiento");
+              process.exit();
             }  
-            return edadLimite;
+            return pEdad;
     };
 }

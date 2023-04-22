@@ -70,15 +70,18 @@ var Player = /** @class */ (function () {
             }
         } while (valor != 0);
     };
-    Player.prototype.validacionDeEdad = function () {
-        var edadLimite = this.edad;
-        if (edadLimite >= 18) {
+    Player.prototype.validacionDeEdad = function (pEdad) {
+        this.edad = pEdad;
+        pEdad = false;
+        if (pEdad >= 18) {
+            pEdad = true;
             console.log("Bienvenido al Casino del indio programador!");
         }
         else {
             console.log("Usted no puede ingresar al establecimiento");
+            process.exit();
         }
-        return edadLimite;
+        return pEdad;
     };
     ;
     return Player;

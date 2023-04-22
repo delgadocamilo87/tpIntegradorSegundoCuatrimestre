@@ -1,13 +1,12 @@
 import { Casino } from "./casino";
 
-export class Cartas extends Casino  {
+export class Cartas{
     private baraja:[];
     private puntosJugadores:number;
     private premio:number;
     private apuesta :number;
 
-    constructor(){
-        super([])}
+    constructor(){}
 
     public getbaraja():[]{
         return this.baraja;

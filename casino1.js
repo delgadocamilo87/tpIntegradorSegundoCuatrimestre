@@ -16,6 +16,7 @@ var Casino = /** @class */ (function () {
         var pEdad = readline.questionInt("Ahora, dime tu edad: ");
         var pCredito = readline.questionInt('Cuantos créditos deseas comprar?');
         var player = new player_1.Player(pNombre, pEdad, pCredito);
+        player.validacionDeEdad();
     };
     Casino.prototype.mostrarInicio = function (pTitulo) {
         console.log("Disfrute mucho de ".concat(pTitulo));

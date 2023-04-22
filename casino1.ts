@@ -19,7 +19,7 @@ export class Casino {
     let pEdad = readline.questionInt("Ahora, dime tu edad: ");
     let pCredito = readline.questionInt('Cuantos créditos deseas comprar?')
     let player = new Player(pNombre, pEdad, pCredito);
-    player.validacionDeEdad(pEdad);
+    player.validacionDeEdad();
     }
 
   public mostrarInicio(pTitulo: string){
@@ -27,7 +27,7 @@ export class Casino {
      console.log('mucha suerte!!');
      console.log('\n');     
   }
-  
+
   public menuCasino(): number{
     console.log('\n');    
     console.log(`    Bienvenido al Casino del indio programador`);

@@ -30,7 +30,7 @@ var Menu = /** @class */ (function () {
                 console.log('Gracias por haber jugado en el casino del Indio Programador');
                 break;
             default:
-                console.log('ingrese algun número del indice por favor');
+                console.log('ingrese algun número del indice por favor: ');
         }
     };
     return Menu;

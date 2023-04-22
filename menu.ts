@@ -1,4 +1,4 @@
-import { Casino } from "./casino";
+import { Casino } from "./casino1";
 import { Player } from "./player";
 import { Ruleta } from "./ruletaLogica";
 import { tragaMonedasChica } from "./tragamonedasChico";
@@ -34,10 +34,7 @@ export class Menu {
                 console.log('Gracias por haber jugado en el casino del Indio Programador');
              break;
              default:
-                console.log('ingrese algun número del indice por favor');
-                
-                
-        }
-            
-        }
+                console.log('ingrese algun número del indice por favor: ');                
+        }            
+   }
 }
